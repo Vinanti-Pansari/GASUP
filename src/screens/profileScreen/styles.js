@@ -9,11 +9,10 @@ const styles = StyleSheet.create({
     container: {
         alignSelf: 'center',
         justifyContent: 'center',
-        alignItems:'center'
+        alignItems: 'center'
     },
-    topSpacing:{
+    topSpacing: {
         marginTop: screenHeight * 0.12,
-        flex: 1
     },
     headingStyle: {
         textAlign: 'center',
@@ -21,32 +20,34 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontFamily: Fonts.HEADING_FONT
     },
-    profileBlock:{
+    profileBlock: {
         height: screenHeight * 0.58,
         width: screenWidth * 0.85,
         backgroundColor: Colors.PROFILE_BACKGROUND_COLOR,
         borderRadius: 10,
         alignSelf: 'center'
     },
-    imageBlock:{
+    imageBlock: {
         position: 'absolute',
         alignSelf: 'center',
-        top: -(screenHeight * 0.18)/2,
+        top: -(screenHeight * 0.18) / 2,
     },
-    imageStyle:{
+    imageStyle: {
         height: screenHeight * 0.18,
         width: screenHeight * 0.18,
-        borderRadius: (screenHeight * 0.18)/2,
-        backgroundColor: '#ccc'
+        borderRadius: (screenHeight * 0.18) / 2,
+        backgroundColor: '#ccc',
+        marginTop: 20,
+        alignSelf: 'center'
     },
-    nameTitleStyle:{
+    nameTitleStyle: {
         textAlign: 'center',
         fontSize: 20,
         color: '#000',
         fontFamily: Fonts.HEADING_FONT,
         paddingTop: screenHeight * 0.12
     },
-    detailView:{
+    detailView: {
         width: '90%',
         alignSelf: 'center',
         height: 60,
@@ -56,24 +57,24 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row'
     },
-    ValueText:{
+    ValueText: {
         fontSize: 15,
         color: '#000',
         fontFamily: Fonts.SUB_HEADING_FONT,
         width: '70%'
     },
-    keyText:{
+    keyText: {
         textAlign: 'right',
         fontSize: 15,
         color: '#ccc',
         fontFamily: Fonts.SUB_HEADING_FONT,
         width: '30%'
     },
-    commonMargin:{
+    commonMargin: {
         marginTop: 20,
         marginBottom: 20
     },
-    ButtonView:{
+    ButtonView: {
         position: 'absolute',
         bottom: -(screenHeight * 0.03),
         width: screenWidth * 0.35,
@@ -83,7 +84,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     },
-    buttonText:{
+    buttonText: {
         fontSize: 15,
         color: '#fff',
         padding: 10,
@@ -99,6 +100,75 @@ const styles = StyleSheet.create({
         elevation: 3,
         marginTop: 10,
     },
+    profileModalPopUp: {
+        flex: 1,
+        backgroundColor: '#fff'
+    },
+    editProfileContainerView: {
+        margin: 15
+    },
+    editProfileHeading: {
+        textAlign: 'center',
+        fontSize: 25,
+        color: Colors.THEME_COLOR,
+        fontFamily: Fonts.HEADING_FONT
+    },
+    cancelButton:{
+        position: 'absolute',
+        top: 20,
+        right: 10
+    },
+    mobileView: {
+        width: '100%',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    mobileCodeView: {
+        width: '20%',
+       // borderBottomWidth: 1.5,
+        height: 50,
+        backgroundColor: '#fff',
+        borderColor: Colors.GRAY_BORDER
+    },
+    mobileCodeTextInput: {
+        width: '100%',
+        fontSize: 15,
+        borderBottomWidth: 1.5,
+      //  height: 50,
+        paddingLeft: 8,
+
+    },
+    mobileNumberView: {
+        width: '75%',
+        height: 50,
+        backgroundColor: '#fff',
+    },
+    mobileNumberTextInput:{
+        fontSize: 15,
+        borderBottomWidth: 1.5,
+        height: 50,
+        paddingLeft: 8,
+        backgroundColor: '#fff',
+        borderColor: Colors.GRAY_BORDER,
+    },
+    profileImageView:{
+        height: screenHeight * 0.18,
+        width: screenHeight * 0.18,
+        borderRadius: (screenHeight * 0.18) / 2,
+        backgroundColor: '#ccc',
+        marginTop: 20,
+        alignSelf: 'center',
+        borderColor: Colors.THEME_COLOR,
+        borderWidth: 2
+    },
+    UpdateButtonView:{
+        height: 50,
+        width: '90%',
+        backgroundColor: Colors.THEME_COLOR,
+        alignItems: 'center',
+        justifyContent: 'center',
+        alignSelf: 'center'
+    }
 });
 
 export default styles;

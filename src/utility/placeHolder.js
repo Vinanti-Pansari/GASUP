@@ -4,5 +4,6 @@ export default {
     CODE: 'Code',
     MOBILE_NUMBER: 'Mobile number',
     EMAIL: 'email (optional)',
-    ADDRESS: 'Address'
+    ADDRESS: 'Address',
+    NUMBER: '0'
 }

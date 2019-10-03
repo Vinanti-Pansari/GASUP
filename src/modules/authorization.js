@@ -9,7 +9,6 @@ export function authorization() {
     return async (dispatch) => {
         AsyncStorage.getItem(Constant.ASYNC_KEYS.USER_EMAIL)
             .then (data => {
-            console.log('data', data)
             if (data !== null) {
                 dispatch({
                     type: ActionType.USER_LOGGED_IN,

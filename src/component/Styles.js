@@ -191,6 +191,7 @@ const styles = StyleSheet.create({
         marginLeft: 20
     },
     labelInput: {
+        paddingTop: 10,
         color: Colors.GRAY_BORDER,
         fontFamily: Fonts.SUB_HEADING_FONT,
         fontSize: 13,

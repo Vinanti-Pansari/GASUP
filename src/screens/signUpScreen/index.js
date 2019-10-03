@@ -57,9 +57,10 @@ class SignUpScreen extends Component {
     handleSignUp = () => {
         const {userName, address, code, mobileNumber, email, password } = this.state;
         Keyboard.dismiss();
-        validate('email', email.trim()) || validate('password', password.trim());
         const validationError =
-            validate('checkEmpty',  userName.trim());
+            validate('checkEmpty',  userName.trim()) ||
+            validate('email', email.trim()) ||
+            validate('password', password.trim());
             validate('checkEmpty',  code.trim()) ||
             validate('phoneNumber',  mobileNumber) ||
             validate('email', email.trim()) ||
@@ -104,18 +105,23 @@ class SignUpScreen extends Component {
                                 value={userName}
                                 keyboardType="email-address"
                                 returnKeyType={'next'}
+                                inputRef={el => this.code = el}
+                                onSubmitEditing={() => this.password.focus()}
                                 onChangeText={(text) => this.handleTextChange(text, 'userName')}
                             />
                             <View style={Styles.mobileView}>
                                 <Input
+                                    maxLength={2}
                                     style={Styles.mobileCodeView}
                                     placeholder={PlaceHolder.CODE}
                                     value={code}
                                     keyboardType='numeric'
                                     returnKeyType={'next'}
+                                    inputRef={el => this.code = el}
                                     onChangeText={(text) => this.handleTextChange(text, 'code')}
                                 />
                                 <Input
+                                    maxLength={10}
                                     style={Styles.mobileNumberView}
                                     placeholder={PlaceHolder.MOBILE_NUMBER}
                                     value={mobileNumber}
@@ -125,11 +131,13 @@ class SignUpScreen extends Component {
                                 />
                             </View>
                             <Input
-                                placeholder={PlaceHolder.EMAIL}
+                                placeholder={PlaceHolder.USERNAME}
                                 value={email}
                                 keyboardType="email-address"
                                 returnKeyType={'next'}
                                 onChangeText={(text) => this.handleTextChange(text, 'email')}
+                                inputRef={el => this.email = el}
+                                onSubmitEditing={() => this.password.focus()}
                             />
                             <View style={Styles.passwordView}>
                                 <Input

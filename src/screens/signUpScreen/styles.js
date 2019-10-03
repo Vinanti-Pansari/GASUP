@@ -30,15 +30,27 @@ const styles = StyleSheet.create({
         width: 30,
     },
     mobileView: {
-        width: '100%',
+        width: screenWidth * 0.85,
         flexDirection: 'row',
         justifyContent: 'space-between'
     },
     mobileCodeView: {
-        width: '20%'
+        width: screenWidth * 0.15,
+        fontSize: 15,
+        borderBottomWidth: 1.5,
+        height: 50,
+        paddingLeft: 8,
+        backgroundColor: 'transparent',
+        borderColor: Colors.GRAY_BORDER,
     },
     mobileNumberView: {
-        width: '75%'
+        width: screenWidth * 0.65,
+        fontSize: 15,
+        borderBottomWidth: 1.5,
+        height: 50,
+        paddingLeft: 8,
+        backgroundColor: 'transparent',
+        borderColor: Colors.GRAY_BORDER,
     },
     referralBlock: {
         marginTop: 20,

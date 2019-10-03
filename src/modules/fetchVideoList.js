@@ -11,7 +11,6 @@ export function fetchVideoList() {
             });
             Axios.get(Config.VIDEO_LIST_URL)
                 .then((response) => {
-                    console.log('response', response);
                         dispatch({
                             error: null,
                             videoListPayload: response.data.videos,
@@ -20,7 +19,6 @@ export function fetchVideoList() {
                         resolve(response.data.videos)
                 })
                 .catch((error) => {
-                    console.log('error', error);
                     dispatch({
                         error: error,
                         videoListPayload: null,

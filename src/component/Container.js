@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { View, StatusBar, Image, Keyboard } from 'react-native';
 import PropTypes from 'prop-types';
 import Spinner from '../component/Spinner';
@@ -6,6 +6,7 @@ import Icons from "../utility/icons";
 import Styles from '../component/Styles';
 import { applyBackgroundColor, applyStatusBarColor } from '../utility/dynamicStyle';
 import {connect} from "react-redux";
+
 
 class Container  extends Component {
     constructor(props) {
@@ -16,7 +17,6 @@ class Container  extends Component {
     }
 
     componentDidMount() {
-        console.log('enter');
         this.keyboardDidShowListener = Keyboard.addListener(
             'keyboardDidShow',
             this._keyboardDidShow,
@@ -63,10 +63,6 @@ class Container  extends Component {
                    barStyle={'dark-content'}
                />
                {this.props.children}
-               {
-                   error &&
-                   alert(error)
-               }
                <Spinner animating={this.props.fetching}/>
                {
                    (screen === 'login' && displayBottomView) &&

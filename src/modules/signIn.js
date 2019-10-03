@@ -1,10 +1,10 @@
 import Constants from '../utility/constant';
 import ActionType from '../utility/actionTypes';
 import DataOptions from '../utility/dataOptions';
+import { errorHandler } from './errorHandler';
 
 export function signIn(data) {
-    return (dispatch) => new Promise((resolve, reject) => {
-        console.log('data', data, data.email.trim() === DataOptions.VALID_EMAIL && data.password === DataOptions.VALID_PASSWORD)
+    return (dispatch) => {
         dispatch({
             error: null,
             signInPayload: null,
@@ -23,8 +23,9 @@ export function signIn(data) {
                     signInPayload: null,
                     type: ActionType.SIGN_IN_FAIL
                 });
+            alert(Constants.LOGIN_FAILED)
             }
-    });
+    }
 }
 
 
@@ -32,7 +33,6 @@ export default function reducer(state = {
     fetching: false,
     signInPayload: null
 }, action) {
-    console.log('action', action);
     switch (action.type) {
         case ActionType.SIGN_IN_REQUEST: {
             return {

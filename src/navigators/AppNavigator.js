@@ -9,7 +9,6 @@ export let navigationDispatchService;
 
 class AppNavigator extends Component {
     componentDidMount() {
-        console.log('enter');
         const { dispatch } = this.props;
         this.backHandler = BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
         dispatch(authorization());

@@ -1,24 +1,30 @@
-import FloatingLabel from 'react-native-floating-labels';
-import { View, Image, Text } from 'react-native';
+import { View, Text, TextInput } from 'react-native';
 import React from 'react';
-import styles from './Styles';
-import Placeholder from '../utility/placeHolder';
-import Icons from '../utility/icons';
+import Styles from './Styles';
+import Color from '../utility/colors'
 
-const FloatingLabels = (props) => {
-    const { placeholder, showPassword } = props;
+const Input = (props) => {
+    const { placeholder } = props;
     return (
-        <FloatingLabel
-            labelStyle={styles.labelInput}
-            inputStyle={styles.input}
-            password={showPassword}
-            ref={props.inputRef}
-            {...props}
-        >
+        <View>
             {
-                placeholder
+                placeholder !== '0' &&
+                <Text style={Styles.labelInput}>{placeholder}</Text>
             }
-        </FloatingLabel>
+
+        <TextInput
+            style={Styles.input}
+            underlineColorAndroid="transparent"
+            spellCheck={false}
+            autoCorrect={false}
+            autoCapitalize="none"
+            placeholderTextColor={Color.PLACEHOLDER_COLOR}
+            blurOnSubmit={false}
+            ref={props.inputRef}
+            returnKeyType="next"
+            {...props}
+            />
+        </View>
     )
 };
-export default FloatingLabels;
+export default Input;

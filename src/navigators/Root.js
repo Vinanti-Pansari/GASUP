@@ -14,7 +14,8 @@ import Styles from '../component/Styles';
 import LoginScreen from '../screens/loginScreen/index';
 import SignUpScreen from '../screens/signUpScreen/index';
 import ProfileScreen from '../screens/profileScreen/index';
-import SplashScreen from '../component/Splash'
+import SplashScreen from '../component/Splash';
+import StripScreen from '../screens/stripScreen/index'
 
 
 const navOptions = {
@@ -95,6 +96,7 @@ const Profile= createStackNavigator({
  */
 const TabNavigator = createBottomTabNavigator({
     VideoScreen: {screen: Video},
+    StripScreen: {screen: StripScreen},
     Profile: {screen: Profile},
 }, {
     tabBarOptions: {

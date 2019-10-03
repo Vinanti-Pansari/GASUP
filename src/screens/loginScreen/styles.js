@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     },
     logoView: {
         position: 'absolute',
-        top: screenHeight * 0.15 - 50
+        top: screenHeight * 0.15 - 50,
     },
     logonImage: {
         height: screenHeight * 0.22,

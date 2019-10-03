@@ -6,6 +6,8 @@ import { AppNavigator } from './navigators/Root';
 import fetchVideoList from './modules/fetchVideoList';
 import errorHandler from './modules/errorHandler';
 import signIn from './modules/signIn';
+import getStripDetails from './modules/getStripDetails';
+
 /**
  *  Simply return the original `state` if `nextState` is null or undefined.
  * @param state
@@ -25,7 +27,8 @@ const AppReducer = combineReducers({
     nav,
     fetchVideoList,
     errorHandler,
-    signIn
+    signIn,
+    getStripDetails
 });
 
 export default AppReducer;

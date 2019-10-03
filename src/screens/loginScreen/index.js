@@ -18,6 +18,7 @@ import PlaceHolder from '../../utility/placeHolder';
 import { signIn } from '../../modules/signIn';
 import { validate } from '../../utility/validator';
 import { navigateToScreen, resetStack } from '../../utility/handleNavigation';
+import { errorHandler } from  '../../modules/errorHandler';
 import Constant from '../../utility/constant';
 
 
@@ -27,7 +28,8 @@ class LoginScreen extends Component {
         this.state = {
             email: '',
             password: '',
-            showPassword: true
+            showPassword: true,
+            displayAlert: false
         };
 
     }
@@ -40,7 +42,6 @@ class LoginScreen extends Component {
         const {
             signInPayload,
         } = this.props;
-        console.log('signInPayload', signInPayload);
         if (signInPayload !== null) {
             AsyncStorage.setItem(Constant.ASYNC_KEYS.USER_EMAIL, signInPayload);
             resetStack('TabNavigator')
@@ -68,6 +69,7 @@ class LoginScreen extends Component {
         const validationError =
             validate('email', email.trim()) || validate('password', password.trim());
         if (validationError) {
+            this.setState({displayAlert : true});
             alert(validationError);
         } else {
             let data = {
@@ -90,11 +92,12 @@ class LoginScreen extends Component {
     };
 
     render() {
-        const {email, password, showPassword} = this.state;
+        const { email, password, showPassword, displayAlert} = this.state;
         const {fetching} = this.props;
         return (
             <Container
                 screen={'login'}
+                displayAlert={displayAlert}
                 fetching={fetching}
             >
                 <View style={Styles.container}>
@@ -114,18 +117,23 @@ class LoginScreen extends Component {
                         </View>
                         <View style={Styles.commonMargin}>
                             <Input
+
                                 placeholder={PlaceHolder.USERNAME}
                                 value={email}
                                 keyboardType="email-address"
                                 returnKeyType={'next'}
                                 onChangeText={(text) => this.handleTextChange(text, 'email')}
+                                inputRef={el => this.email = el}
+                                onSubmitEditing={() => this.password.focus()}
                             />
                             <View style={Styles.passwordView}>
                                 <Input
-                                    showPassword={showPassword}
+                                    returnKeyType="done"
+                                    secureTextEntry={showPassword}
                                     placeholder={PlaceHolder.PASSWORD}
                                     value={password}
                                     onSubmitEditing={this.handleLogin}
+                                    inputRef={el => this.password = el}
                                     onChangeText={(text) => this.handleTextChange(text, 'password')}
                                 />
                                 {

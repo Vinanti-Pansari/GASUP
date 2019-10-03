@@ -14,7 +14,6 @@ class VideoScreen extends Component {
         super(props);
         this.state = {
             videoList: [],
-            nextDataIsAvailable: false,
             onEndReachedPage: -1,
             flatListReady: false,
             paginationSpinner: false
